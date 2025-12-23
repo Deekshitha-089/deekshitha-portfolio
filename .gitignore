@@ -1,0 +1,13 @@
+# System files
+.DS_Store
+
+# Root
+node_modules
+dist
+
+# Client
+client/node_modules
+client/dist
+
+# Ignore large media files
+public/*.mp4
