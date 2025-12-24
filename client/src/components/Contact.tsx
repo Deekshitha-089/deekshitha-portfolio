@@ -34,7 +34,7 @@ export function Contact() {
               <div className="space-y-8 text-sm">
                 <div className="space-y-1">
                   <h4 className="font-semibold">Email ✉️</h4>
-                  <p className="text-slate-300">deekshitha@email.com</p>
+                  <p className="text-slate-300">deekshithapuppala5@gmail.com</p>
                 </div>
 
                 <div className="space-y-1">

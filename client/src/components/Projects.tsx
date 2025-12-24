@@ -13,7 +13,7 @@ const projects = [
     color: "#ffc2c7",
     image: "port.png",
     githubUrl: "https://github.com/Deekshitha-089/Deekshitha-portfolio",
-    liveUrl: "https://deekshitha-portfolio.vercel.app",
+    liveUrl: "https://deekshitha-089.github.io/deekshitha-portfolio/",
   },
 
   {
