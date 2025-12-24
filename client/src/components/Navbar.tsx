@@ -51,13 +51,15 @@ export function Navbar() {
             </Link>
           ))}
 
-             <a
-  href="/deekshitha-portfolio/resume"
-  className="px-4 py-2 bg-[#ffc2c7] text-[#5e2d31] rounded-full font-bold hover:scale-105 transition"
+             <button
+  onClick={() => {
+    window.history.pushState({}, "", "/deekshitha-portfolio/resume");
+    window.dispatchEvent(new PopStateEvent("popstate"));
+  }}
+className="px-4 py-2 bg-[#ffc2c7] text-[#5e2d31] rounded-full font-body font-semibold hover:opacity-90 transition"
 >
   RESUME
-</a>
-
+</button>
 
 
         </div>
