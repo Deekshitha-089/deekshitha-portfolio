@@ -6,8 +6,8 @@ export function Contact() {
       id="contact"
       className="relative py-32 overflow-hidden bg-fixed bg-center bg-cover"
       style={{
-        backgroundImage: "url('/contact-bg.jpg')",
-      }}
+  backgroundImage: "url('./contact-bg.jpg')",
+}}
     >
       {/* Overlay for readability */}
       <div className="absolute inset-0 bg-white/20 dark:bg-black/70" />

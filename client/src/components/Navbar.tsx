@@ -44,20 +44,21 @@ export function Navbar() {
               to={item.to}
               smooth
               duration={500}
+              spy={false}
               className="cursor-pointer text-foreground hover:text-[#e07e86] transition-colors font-medium text-sm tracking-wide"
             >
               {item.name.toUpperCase()}
             </Link>
           ))}
 
-          <a
-            href="/resume"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-[#ffc2c7] text-[#5e2d31] rounded-full font-bold hover:bg-[#ffc2c7]/80 hover:scale-105 transition-all shadow-lg shadow-[#ffc2c7]/20"
-           >
-           RESUME
-           </a>
+             <a
+  href="/deekshitha-portfolio/resume"
+  className="px-4 py-2 bg-[#ffc2c7] text-[#5e2d31] rounded-full font-bold hover:scale-105 transition"
+>
+  RESUME
+</a>
+
+
 
         </div>
 

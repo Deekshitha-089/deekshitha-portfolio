@@ -1,12 +1,12 @@
-import { Route, Switch } from "wouter";
-import Home from "./pages/Home";
-import Resume from "./pages/Resume";
+ import Home from "./pages/Home";
+import Resume from "./pages/resume";
 
 export default function App() {
-  return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/resume" component={Resume} />
-    </Switch>
-  );
+  const path = window.location.pathname;
+
+  if (path.includes("/resume")) {
+    return <Resume />;
+  }
+
+  return <Home />;
 }

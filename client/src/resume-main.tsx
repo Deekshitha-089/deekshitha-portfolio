@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import Resume from "./pages/Resume";
+import Resume from "./pages/resume";
 import "./index.css";
 
 const container = document.getElementById("root");
