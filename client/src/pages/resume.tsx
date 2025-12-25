@@ -1,23 +1,15 @@
 import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
-import { useNavigate } from "react-router-dom";
 
 export default function Resume() {
-  const navigate = useNavigate();
 
   const handleDone = () => {
-    // 🎉 CONFETTI BURST
     confetti({
       particleCount: 200,
       spread: 90,
-      origin: { y: 0.6 },
+      origin: { y: 0.75 },
       colors: ["#ffc2c7", "#b6e5d8", "#fbe5c8", "#8fdde7"],
     });
-
-    // ⏳ Go back home after 1.5s
-    setTimeout(() => {
-      navigate("/");
-    }, 1500);
   };
 
   return (
@@ -47,7 +39,7 @@ export default function Resume() {
           className="rounded-2xl overflow-hidden shadow-xl bg-white"
         >
           <img
-            src="/resume-preview.png"
+            src="./resume-preview.png"
             alt="Deekshitha Puppala Resume Preview"
             className="w-full object-contain"
           />
@@ -58,7 +50,7 @@ export default function Resume() {
 
           {/* Download */}
           <a
-            href="/DEEKSHITHA_PUPPALA_RESUME.pdf"
+            href="./DEEKSHITHA_PUPPALA_RESUME.pdf"
             download
             className="px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold hover:opacity-90 transition text-center"
           >
