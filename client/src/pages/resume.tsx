@@ -5,6 +5,7 @@ export default function Resume() {
     <section className="min-h-screen bg-background text-foreground py-24 px-4">
       <div className="max-w-5xl mx-auto">
 
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -19,6 +20,7 @@ export default function Resume() {
           </p>
         </motion.div>
 
+        {/* Resume Preview */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -26,15 +28,16 @@ export default function Resume() {
           className="rounded-2xl overflow-hidden shadow-2xl bg-card"
         >
           <img
-            src="/deekshitha-portfolio/resume-preview.png"
-            alt="Resume Preview"
+            src="./resume-preview.png"
+            alt="Deekshitha Puppala Resume Preview"
             className="w-full object-contain"
           />
         </motion.div>
 
+        {/* Download Button */}
         <div className="flex justify-center mt-12">
           <a
-            href="/deekshitha-portfolio/DEEKSHITHA_PUPPALA_RESUME.pdf"
+            href="./DEEKSHITHA_PUPPALA_RESUME.pdf"
             download
             className="px-8 py-4 rounded-xl bg-primary text-primary-foreground font-bold hover:opacity-90 transition"
           >
