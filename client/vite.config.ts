@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { resolve } from "path";
 
 export default defineConfig({
   base: "/deekshitha-portfolio/",
@@ -7,8 +8,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: "index.html",
-        resume: "resume.html",
+        main: resolve(__dirname, "index.html"),
+        resume: resolve(__dirname, "resume.html"),
       },
     },
   },
