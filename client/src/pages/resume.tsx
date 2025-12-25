@@ -37,12 +37,13 @@ export default function Resume() {
         {/* Buttons */}
         <div className="flex justify-center mt-12">
           <a
-            href={`${import.meta.env.BASE_URL}DEEKSHITHA_PUPPALA_RESUME.pdf`}
-            download
-            className="px-8 py-4 rounded-xl bg-primary text-primary-foreground font-bold hover:opacity-90 transition"
-          >
-            Download Resume
-          </a>
+  href={`${import.meta.env.BASE_URL}DEEKSHITHA_PUPPALA_RESUME.pdf`}
+  download
+  className="px-8 py-4 rounded-xl bg-primary text-primary-foreground font-bold hover:opacity-90 transition"
+>
+  Download Resume
+</a>
+
         </div>
 
       </div>
