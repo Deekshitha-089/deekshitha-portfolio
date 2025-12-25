@@ -4,4 +4,12 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   base: "/deekshitha-portfolio/",
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: "index.html",
+        resume: "resume.html",
+      },
+    },
+  },
 });

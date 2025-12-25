@@ -39,28 +39,33 @@ export default function Resume({ onBack }: ResumeProps) {
           className="rounded-2xl overflow-hidden shadow-xl bg-white"
         >
           <img
-            src="resume-preview.png"
-            alt="Resume Preview"
-            className="w-full object-contain"
-          />
+  src="resume-preview.png"
+  alt="Deekshitha Puppala Resume Preview"
+  className="w-full object-contain"
+/>
+
         </motion.div>
 
         {/* Buttons */}
-        <div className="flex justify-center gap-4 mt-10">
-          <button
-            onClick={onBack}
-            className="px-6 py-3 rounded-xl border border-border text-sm font-medium"
-          >
-            Back
-          </button>
+<div className="flex justify-center gap-6 mt-10">
+  <a
+    href="/deekshitha-portfolio/"
+    className="px-6 py-3 rounded-xl border font-semibold"
+  >
+    Back
+  </a>
 
-          <button
-            onClick={handleDone}
-            className="px-6 py-3 rounded-xl bg-primary text-primary-foreground text-sm font-medium"
-          >
-            Done
-          </button>
-        </div>
+  <button
+    onClick={() => {
+      import("canvas-confetti").then((confetti) =>
+        confetti.default({ spread: 120, particleCount: 150 })
+      );
+    }}
+    className="px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold"
+  >
+    Done
+  </button>
+</div>
       </div>
     </section>
   );
