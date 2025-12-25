@@ -1,21 +1,22 @@
 import { useState, useEffect } from "react";
-import { Link as ScrollLink } from "react-scroll";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-scroll";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+interface NavbarProps {
+  onResumeClick: () => void;
+}
+
 const navItems = [
   { name: "Home", to: "home" },
-  { name: "Contents", to: "contents" },
   { name: "About", to: "about" },
   { name: "Projects", to: "projects" },
   { name: "Contact", to: "contact" },
 ];
 
-export function Navbar() {
+export function Navbar({ onResumeClick }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -35,32 +36,29 @@ export function Navbar() {
       <div className="container mx-auto px-6 flex justify-between items-center">
 
         {/* Logo */}
-        <div
-          onClick={() => navigate("/")}
-          className="text-2xl font-bold tracking-tighter text-foreground cursor-pointer"
-        >
-          DEEKSHITHA PUPPALA<span className="text-[#ffc2c7]">.</span>
+        <div className="text-2xl font-bold tracking-tight text-foreground">
+          DEEKSHITHA<span className="text-[#ffc2c7]">.</span>
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 items-center">
+        <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
-            <ScrollLink
+            <Link
               key={item.name}
               to={item.to}
               smooth
               duration={500}
               offset={-80}
-              className="cursor-pointer text-foreground hover:text-[#e07e86] transition-colors font-medium text-sm tracking-wide"
+              className="cursor-pointer text-sm font-medium text-foreground hover:text-[#e07e86] transition"
             >
               {item.name.toUpperCase()}
-            </ScrollLink>
+            </Link>
           ))}
 
-          {/* Resume Button (ROUTING) */}
+          {/* RESUME BUTTON */}
           <button
-            onClick={() => navigate("/resume")}
-            className="px-4 py-2 bg-[#ffc2c7] text-[#5e2d31] rounded-full font-medium font-[Poppins] hover:opacity-90 transition"
+            onClick={onResumeClick}
+            className="px-5 py-2 rounded-full bg-[#ffc2c7] text-[#5e2d31] text-sm font-semibold hover:opacity-90 transition"
           >
             RESUME
           </button>
@@ -82,32 +80,31 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border overflow-hidden"
+            className="md:hidden bg-background border-b border-border"
           >
             <div className="flex flex-col p-6 space-y-4 items-center">
               {navItems.map((item) => (
-                <ScrollLink
+                <Link
                   key={item.name}
                   to={item.to}
                   smooth
                   duration={500}
                   offset={-80}
                   onClick={() => setIsOpen(false)}
-                  className="cursor-pointer text-lg font-medium"
+                  className="text-lg font-medium"
                 >
                   {item.name}
-                </ScrollLink>
+                </Link>
               ))}
 
-              {/* Resume Mobile */}
               <button
                 onClick={() => {
                   setIsOpen(false);
-                  navigate("/resume");
+                  onResumeClick();
                 }}
-                className="px-8 py-3 w-full text-center bg-[#ffc2c7] text-[#5e2d31] rounded-full font-medium"
+                className="w-full px-6 py-3 rounded-full bg-[#ffc2c7] text-[#5e2d31] font-semibold"
               >
-                View Resume
+                RESUME
               </button>
             </div>
           </motion.div>

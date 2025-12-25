@@ -1,14 +1,17 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import Home from "./pages/Home";
 import Resume from "./pages/resume";
 
 export default function App() {
+  const [showResume, setShowResume] = useState(false);
+
   return (
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/resume" element={<Resume />} />
-      </Routes>
-    </HashRouter>
+    <>
+      {showResume ? (
+        <Resume onBack={() => setShowResume(false)} />
+      ) : (
+        <Home onResumeClick={() => setShowResume(true)} />
+      )}
+    </>
   );
 }
