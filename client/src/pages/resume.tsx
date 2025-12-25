@@ -39,15 +39,7 @@ export default function Resume() {
 
         {/* Actions */}
         <div className="flex flex-col sm:flex-row justify-center gap-6">
-
-          {/* Download */}
-          <a
-            href="DEEKSHITHA_PUPPALA_RESUME.pdf"
-            download
-            className="px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold hover:opacity-90 transition text-center"
-          >
-            Download Resume
-          </a>
+          
 
           {/* Done */}
           <button
