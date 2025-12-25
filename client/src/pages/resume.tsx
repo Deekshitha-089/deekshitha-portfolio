@@ -20,7 +20,7 @@ export default function Resume() {
           </p>
         </motion.div>
 
-        {/* Resume Preview Image */}
+        {/* Resume Preview */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -28,22 +28,21 @@ export default function Resume() {
           className="rounded-2xl overflow-hidden shadow-2xl bg-card"
         >
           <img
-            src={`${import.meta.env.BASE_URL}resume-preview.png`}
+            src="./resume-preview.png"
             alt="Deekshitha Puppala Resume Preview"
             className="w-full object-contain"
           />
         </motion.div>
 
-        {/* Buttons */}
+        {/* Download Button */}
         <div className="flex justify-center mt-12">
           <a
-  href={`${import.meta.env.BASE_URL}DEEKSHITHA_PUPPALA_RESUME.pdf`}
-  download
-  className="px-8 py-4 rounded-xl bg-primary text-primary-foreground font-bold hover:opacity-90 transition"
->
-  Download Resume
-</a>
-
+            href="./DEEKSHITHA_PUPPALA_RESUME.pdf"
+            download
+            className="px-8 py-4 rounded-xl bg-primary text-primary-foreground font-bold hover:opacity-90 transition"
+          >
+            Download Resume
+          </a>
         </div>
 
       </div>
