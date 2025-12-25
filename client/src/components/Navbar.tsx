@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -14,6 +15,7 @@ const navItems = [
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -23,44 +25,45 @@ export function Navbar() {
 
   return (
     <nav
-  className={`fixed top-0 left-0 w-full z-40 transition-all duration-300
-    ${
-      scrolled
-        ? "bg-background/80 backdrop-blur-md shadow-sm py-4 border-b border-border"
-        : "bg-white/70 dark:bg-background/50 backdrop-blur-md py-6"
-    }`}
->
+      className={`fixed top-0 left-0 w-full z-40 transition-all duration-300
+        ${
+          scrolled
+            ? "bg-background/80 backdrop-blur-md shadow-sm py-4 border-b border-border"
+            : "bg-white/70 dark:bg-background/50 backdrop-blur-md py-6"
+        }`}
+    >
       <div className="container mx-auto px-6 flex justify-between items-center">
+
         {/* Logo */}
-        <div className="text-2xl font-bold tracking-tighter text-foreground">
+        <div
+          onClick={() => navigate("/")}
+          className="text-2xl font-bold tracking-tighter text-foreground cursor-pointer"
+        >
           DEEKSHITHA PUPPALA<span className="text-[#ffc2c7]">.</span>
         </div>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 items-center">
           {navItems.map((item) => (
-            <Link
+            <ScrollLink
               key={item.name}
               to={item.to}
               smooth
               duration={500}
-              spy={false}
+              offset={-80}
               className="cursor-pointer text-foreground hover:text-[#e07e86] transition-colors font-medium text-sm tracking-wide"
             >
               {item.name.toUpperCase()}
-            </Link>
+            </ScrollLink>
           ))}
 
-             <a
-  href="./DEEKSHITHA_PUPPALA_RESUME.pdf"
-  download
-  className="px-4 py-2 bg-[#ffc2c7] text-[#5e2d31] rounded-full font-bold hover:opacity-90 transition"
->
-  RESUME
-</a>
-
-
-
+          {/* Resume Button (ROUTING) */}
+          <button
+            onClick={() => navigate("/resume")}
+            className="px-4 py-2 bg-[#ffc2c7] text-[#5e2d31] rounded-full font-medium font-[Poppins] hover:opacity-90 transition"
+          >
+            RESUME
+          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -79,29 +82,33 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border text-foreground overflow-hidden"
+            className="md:hidden bg-background border-b border-border overflow-hidden"
           >
             <div className="flex flex-col p-6 space-y-4 items-center">
               {navItems.map((item) => (
-                <Link
+                <ScrollLink
                   key={item.name}
                   to={item.to}
                   smooth
                   duration={500}
+                  offset={-80}
                   onClick={() => setIsOpen(false)}
-                  className="cursor-pointer text-lg font-medium hover:text-[#b6e5d8] transition-colors"
+                  className="cursor-pointer text-lg font-medium"
                 >
                   {item.name}
-                </Link>
+                </ScrollLink>
               ))}
 
-              <a
-                href="#"
-                className="px-8 py-3 w-full text-center bg-[#ffc2c7] text-[#5e2d31] rounded-full font-bold"
-                onClick={() => setIsOpen(false)}
+              {/* Resume Mobile */}
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  navigate("/resume");
+                }}
+                className="px-8 py-3 w-full text-center bg-[#ffc2c7] text-[#5e2d31] rounded-full font-medium"
               >
-                Download Resume
-              </a>
+                View Resume
+              </button>
             </div>
           </motion.div>
         )}
