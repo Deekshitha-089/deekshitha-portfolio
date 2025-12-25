@@ -27,7 +27,7 @@ export default function Resume() {
             My Resume 📄
           </h1>
           <p className="text-muted-foreground">
-            View or download my resume below
+            View my resume below
           </p>
         </motion.div>
 
@@ -48,14 +48,18 @@ export default function Resume() {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-6 mt-12">
 
-          {/* Download */}
-          <a
-            href="./DEEKSHITHA_PUPPALA_RESUME.pdf"
-            download
-            className="px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold hover:opacity-90 transition text-center"
-          >
-            Download Resume
-          </a>
+          <div className="flex justify-center mt-10">
+  
+        <button
+          onClick={() => {
+           window.location.href = "#home";
+          }}
+        className="px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold hover:opacity-90 transition"
+        >
+        ← Back to Home
+        </button>
+      </div>
+
 
           {/* Done */}
           <button
