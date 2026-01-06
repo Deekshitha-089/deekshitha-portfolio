@@ -30,12 +30,11 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        {/* Logo */}
         <div className="text-2xl font-bold tracking-tighter text-foreground">
           DEEKSHITHA PUPPALA<span className="text-[#ffc2c7]">.</span>
         </div>
 
-        {/* Desktop Menu */}
+        {/* Desktop */}
         <div className="hidden md:flex space-x-8 items-center">
           {navItems.map((item) => (
             <Link
@@ -50,16 +49,14 @@ export function Navbar() {
             </Link>
           ))}
 
-          {/* ✅ Resume (HASH ROUTING – CORRECT) */}
           <a
-  href="/deekshitha-portfolio/resume.html"
-  className="px-4 py-2 bg-[#ffc2c7] rounded-full font-semibold"
->
-  RESUME
-</a>
+            href="/deekshitha-portfolio/resume.html"
+            className="px-4 py-2 bg-[#ffc2c7] rounded-full font-semibold"
+          >
+            RESUME
+          </a>
         </div>
 
-        {/* Mobile Toggle */}
         <button
           className="md:hidden text-foreground"
           onClick={() => setIsOpen(!isOpen)}
@@ -68,7 +65,7 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -93,7 +90,7 @@ export function Navbar() {
               ))}
 
               <a
-                href="#resume"
+                href="/deekshitha-portfolio/resume.html"
                 onClick={() => setIsOpen(false)}
                 className="px-8 py-3 w-full text-center bg-[#ffc2c7] text-[#5e2d31] rounded-full font-semibold"
               >
