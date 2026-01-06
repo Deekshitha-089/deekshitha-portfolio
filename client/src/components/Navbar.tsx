@@ -23,15 +23,13 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-40 transition-all duration-300
-      ${
+      className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
         scrolled
           ? "bg-background/80 backdrop-blur-md shadow-sm py-4 border-b border-border"
           : "bg-white/70 dark:bg-background/50 backdrop-blur-md py-6"
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-
         {/* Logo */}
         <div className="text-2xl font-bold tracking-tighter text-foreground">
           DEEKSHITHA PUPPALA<span className="text-[#ffc2c7]">.</span>
@@ -52,13 +50,13 @@ export function Navbar() {
             </Link>
           ))}
 
-          {/* ✅ Resume PAGE  */}
+          {/* ✅ Resume (HASH ROUTING – CORRECT) */}
           <a
-            href="/deekshitha-portfolio/resume.html"
-            className="px-4 py-2 bg-[#ffc2c7] text-[#5e2d31] rounded-full font-semibold hover:opacity-90 transition"
-          >
-            RESUME
-          </a>
+  href="/deekshitha-portfolio/resume.html"
+  className="px-4 py-2 bg-[#ffc2c7] rounded-full font-semibold"
+>
+  RESUME
+</a>
         </div>
 
         {/* Mobile Toggle */}
@@ -95,7 +93,8 @@ export function Navbar() {
               ))}
 
               <a
-                href="/deekshitha-portfolio/resume.html"
+                href="#resume"
+                onClick={() => setIsOpen(false)}
                 className="px-8 py-3 w-full text-center bg-[#ffc2c7] text-[#5e2d31] rounded-full font-semibold"
               >
                 View Resume

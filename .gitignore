@@ -11,3 +11,4 @@ client/dist
 
 # Ignore large media files
 public/*.mp4
+.env
